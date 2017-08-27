@@ -7,6 +7,6 @@
 2. گیت :)
 ## نصب
 ```bash
-git clone https://github.com/pouya-abbasian/clean ; cd clear ; sudo cp clean /bin/clean
+git clone https://github.com/pouya-abbasian/clean ; cd clean ; sudo cp clean /bin/clean
 ```
 و نصب تمام شد و میتوانید از دستور clean برای استفاده ازش ، استفاده کنید :)
