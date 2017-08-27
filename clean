@@ -1,0 +1,78 @@
+#!/bin/bash
+def_dir=$PWD
+IFS=$'\n'
+clean1(){
+if [ -d "/home/$USER/Downloads/" ];then
+	cd "/home/$USER/Downloads/"
+	rename 'y/A-Z/a-z/' *
+	## music
+	if [ -d music ];then
+		mv *.mp3 music
+	else
+		mkdir music
+		mv *.mp3 music
+	fi
+	## FILMS
+	if [ -d video ];then
+	        mv *.mp4 *.mkv *.webm video
+	else
+	        mkdir video
+	        mv *.mp4 *.mkv *.webm video
+	fi
+	## pdf
+	if [ -d pdf ];then
+		mv *.pdf pdf
+	else
+		mkdir pdf
+		mv *.pdf pdf
+	fi
+	## picture
+	if [ -d picture ];then
+		mv *.jpg *.png *.svg picture
+	else
+		mkdir picture
+		mv *.jpg *.png *.svg picture
+	fi
+	## archives
+	if [ -d archive ];then
+		mv *.zip *.rar *.tar *.tar.* *.7z archive
+	else
+		mkdir archive
+		mv *.zip *.rar *.tar *.tar.* *.7z archive
+	fi
+	## Texts
+	if [ -d text ];then
+		mv *.txt text
+	else
+		mkdir text
+		mv *.txt text
+	fi
+	## Config Files
+	if [ -d config ];then
+		mv *.ini *.conf *.config config
+	else
+		mkdir config
+		mv *.ini *.conf *.config config
+	fi
+	## Code
+	if [ -d code ];then
+		mv *.sh *.rb *.py *.php *.js *.html *.css ## And Your Langs
+	else
+		mkdir code
+		mv *.sh *.rb *.py *.php *.js *.html *.css ## And Your Langs
+	fi
+	## others
+	if [ -d other ];then
+		for file in * ;do test -f "$file" && mv "$file" other ; done
+	else
+		mkdir other
+		for file in * ;do test -f "$file" && mv "$file" other ; done
+	fi
+	notify-send "/home/$USER/Downloads Is Clean!"
+else
+		notify-send "/home/$USER/Downloads Not Found, So This Is An ERROR!" 
+fi
+}
+clean1 2>/dev/null
+rmdir * 2>/dev/null
+cd $def_dir
