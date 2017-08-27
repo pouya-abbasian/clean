@@ -73,6 +73,9 @@ else
 		notify-send "/home/$USER/Downloads Not Found, So This Is An ERROR!" 
 fi
 }
-clean1 2>/dev/null
-rmdir * 2>/dev/null
+while true;do
+	clean1 2>/dev/null
+	rmdir * 2>/dev/null
+	sleep 3600
+done & >/dev/null
 cd $def_dir
