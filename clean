@@ -1,9 +1,16 @@
 #!/bin/bash
 def_dir=$PWD
 IFS=$'\n'
+if [ "$1" = "" ];then
+	patch="/home/$USER/Downloads"
+	echo "$patch"
+else
+	patch="$1"
+	echo "$patch"
+fi
 clean1(){
 if [ -d "/home/$USER/Downloads/" ];then
-	cd "/home/$USER/Downloads/"
+	cd "$patch"
 	rename 'y/A-Z/a-z/' *
 	## music
 	if [ -d music ];then
@@ -68,9 +75,9 @@ if [ -d "/home/$USER/Downloads/" ];then
 		mkdir other
 		for file in * ;do test -f "$file" && mv "$file" other ; done
 	fi
-	notify-send "/home/$USER/Downloads Is Clean!"
+	notify-send "$patch Is Clean!"
 else
-		notify-send "/home/$USER/Downloads Not Found, So This Is An ERROR!" 
+		notify-send "$patch Not Found, So This Is An ERROR!" 
 fi
 }
 while true;do
