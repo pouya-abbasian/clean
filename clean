@@ -12,47 +12,47 @@ clean1(){
 if [ -d "/home/$USER/Downloads/" ];then
 	cd "$patch"
 	rename 'y/A-Z/a-z/' *
-	## music
-	if [ -d music ];then
-		mv *.mp3 music
+	## Music
+	if [ -d Music ];then
+		mv *.mp3 Music
 	else
-		mkdir music
-		mv *.mp3 music
+		mkdir Music
+		mv *.mp3 Music
 	fi
 	## FILMS
-	if [ -d video ];then
-	        mv *.mp4 *.mkv *.webm video
+	if [ -d Videos ];then
+	        mv *.mp4 *.mkv *.webm Videos
 	else
-	        mkdir video
-	        mv *.mp4 *.mkv *.webm video
+	        mkdir Videos
+	        mv *.mp4 *.mkv *.webm Videos
 	fi
-	## pdf
-	if [ -d pdf ];then
-		mv *.pdf pdf
+	## Pdf
+	if [ -d Pdf ];then
+		mv *.pdf Pdf
 	else
-		mkdir pdf
-		mv *.pdf pdf
+		mkdir Pdf
+		mv *.pdf Pdf
 	fi
 	## picture
-	if [ -d picture ];then
-		mv *.jpg *.png *.svg picture
+	if [ -d Pictures ];then
+		mv *.jpg *.png *.svg Pictures
 	else
 		mkdir picture
-		mv *.jpg *.png *.svg picture
+		mv *.jpg *.png *.svg Pictures
 	fi
 	## archives
-	if [ -d archive ];then
-		mv *.zip *.rar *.tar *.tar.* *.7z archive
+	if [ -d Archives ];then
+		mv *.zip *.rar *.tar *.tar.* *.7z Archives
 	else
 		mkdir archive
-		mv *.zip *.rar *.tar *.tar.* *.7z archive
+		mv *.zip *.rar *.tar *.tar.* *.7z Archives
 	fi
 	## Texts
-	if [ -d text ];then
-		mv *.txt text
+	if [ -d Text ];then
+		mv *.txt Text
 	else
-		mkdir text
-		mv *.txt text
+		mkdir Text
+		mv *.txt Text
 	fi
 	## Config Files
 	if [ -d config ];then
@@ -63,17 +63,17 @@ if [ -d "/home/$USER/Downloads/" ];then
 	fi
 	## Code
 	if [ -d code ];then
-		mv *.sh *.rb *.py *.php *.js *.html *.css ## And Your Langs
+		mv *.sh *.rb *.py *.php *.js *.html *.css *.cpp ## And Your Langs
 	else
 		mkdir code
-		mv *.sh *.rb *.py *.php *.js *.html *.css ## And Your Langs
+		mv *.sh *.rb *.py *.php *.js *.html *.css *.cpp ## And Your Langs
 	fi
 	## others
-	if [ -d other ];then
-		for file in * ;do test -f "$file" && mv "$file" other ; done
+	if [ -d Other ];then
+		for file in * ;do test -f "$file" && mv "$file" Other ; done
 	else
 		mkdir other
-		for file in * ;do test -f "$file" && mv "$file" other ; done
+		for file in * ;do test -f "$file" && mv "$file" Other ; done
 	fi
 	notify-send "$patch Is Clean!"
 else
