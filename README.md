@@ -8,8 +8,7 @@
 2. گیت :)
 ## نصب
 ```bash
-git clone https://github.com/pouya-abbasian/clean ; cd clean ; sudo cp clean /bin/clean
-sudo chmod +x /bin/clean
+git clone https://github.com/pouya-abbasian/clean && cd clean && sudo cp clean /bin/clean && sudo chmod +x /bin/clean
 ```
 همچنین برای اینکه یک مسیر دیگه هم داشته باشید میتونید از روش زیر عمل کنید(مسیر پیشفرض دانلود هاست!)
 در مثال زیر فایل های خانه شما مرتب میشود.
