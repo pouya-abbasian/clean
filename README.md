@@ -16,8 +16,4 @@ git clone https://github.com/pouya-abbasian/clean && cd clean && sudo cp clean /
 clean ~
 ```
 و نصب تمام شد و میتوانید از دستور clean برای استفاده ازش ، استفاده کنید :)
-اگر هم دوست داشید این اسکریپت همیشه برای شما کار کند میتونین اون رو در startup بزارید به این صورت:
-```bash
-sudo su - 
-echo "@reboot clean" >> /etc/crontab
-```
+اگر هم دوست داشید این اسکریپت همیشه برای شما کار کند میتونین اون رو در startup بزارید به این صورت!
